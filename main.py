@@ -16,7 +16,7 @@ class BaseApiUrl:
 class LoginToken:
     
     def get_login_token(self) -> str:
-        return ""
+        return ''
     
 class GetPeopleFollows:
     
@@ -190,7 +190,7 @@ class Runner:
 
     def main(self):
         self.print_wating()
-        group_ids = GetFollowsByPosts(['https://vk.com/wall-105838386_18710']).main() 
+        group_ids = GetFollowsByPosts(['https://vk.com/wall-105838386_18710']).main()
         arrays = GetParalleled(group_ids).get_10_quant()
         tasks = [Process(target=GetGroupNames(array).get_group_names, args=(i,)) for array, i in zip(arrays, range(len(arrays)))]
         for _ in tasks:
@@ -210,7 +210,7 @@ class ConcatDataFrames:
             os.remove(f"{self.directory}/{file}")
         new_df = pd.DataFrame()
         new_df['names'] = names
-        counts = new_df['names'].value_counts()[:50]
+        counts = new_df['names'].value_counts()[:250]
         counts.to_csv("result.csv")
 
 if __name__ ==  '__main__':
