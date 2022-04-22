@@ -1,0 +1,5 @@
+/modules/__pycache__
+/modules/*.pyc 
+/temp/*.csv
+*.csv
+token.txt
