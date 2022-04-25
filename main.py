@@ -21,7 +21,7 @@ async def entry(id_of_group):
         with open('retarget.txt', 'a') as file:
             for item in result['items']:
                 analyse += 1
-                file.write(f"https://vk.com/id{item}\n")
+                file.write(f"{item}\n")
 
 
 async def main():
